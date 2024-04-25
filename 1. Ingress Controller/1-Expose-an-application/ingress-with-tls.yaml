@@ -1,0 +1,22 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kuard
+  namespace: kuard
+  annotations: {}
+spec:
+  tls:
+  - hosts:
+    - infra.almacg.com
+    secretName: kuard-tls-secret
+  rules:
+  - host: infra.almacg.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: kuard
+            port:
+              number: 80
