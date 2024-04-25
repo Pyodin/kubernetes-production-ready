@@ -3,8 +3,11 @@ kind: Ingress
 metadata:
   name: kuard
   namespace: kuard
-  annotations: {}
 spec:
+  tls:
+  - hosts:
+    - kuard.bhs-consulting.com
+    secretName: kuard-tls-with-lets-encrypt
   rules:
   - host: kuard.bhs-consulting.com
     http:

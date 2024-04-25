@@ -1,0 +1,10 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+    name: kuard-selfsigned-cert
+    namespace: kuard
+spec:
+    secretName: kuard-selfsigned-tls
+    issuerRef:
+        name: selfsigned-issuer
+    commonName: <domain>

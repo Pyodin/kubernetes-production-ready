@@ -7,10 +7,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - infra.almacg.com
+    - kuard.bhs-consulting.com
     secretName: kuard-tls-secret
   rules:
-  - host: infra.almacg.com
+  - host: kuard.bhs-consulting.com
     http:
       paths:
       - path: /

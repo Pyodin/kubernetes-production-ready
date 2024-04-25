@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kuard
+  namespace: kuard
+  annotations:
+      cert-manager.io/cluster-issuer: selfsigned-cluster-issuer
+spec:
+  tls:
+  - hosts:
+      - <domain>
+    secretName: kuard-selfsigned-tls
+  rules:
+  - host: <domain>
+      http:
+      paths:
+      - path: /
+          pathType: Prefix
+          backend:
+          service:
+              name: kuard
+              port:
+              number: 80

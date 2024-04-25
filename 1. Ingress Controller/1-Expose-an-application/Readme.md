@@ -4,7 +4,7 @@ The purpose of this tutorial is to deploy an application in our Kubernetes clust
 We will deploy the simple `kuard` application, which is a simple web application that displays its hostname and IP address. 
 
 ## Prerequisites
-- A Tanzu Kubernetes cluster
+- A Kubernetes cluster
 - The `kubectl` command line tool
 - An Ingress Controller installed in the cluster. 
 
@@ -195,5 +195,5 @@ For this, you must have a valid TLS certificate for the domain you specified in 
 
 4. Access the application using HTTPS. Open a web browser and navigate to the following URL: `https://<your_domain>`. You should see the kuard application displayed in your browser using HTTPS.
 
-That's it! You have successfully deployed an application in your Tanzu Kubernetes cluster and made it accessible from outside the cluster using an Ingress resource.
+That's it! You have successfully deployed an application in your Kubernetes cluster and made it accessible from outside the cluster using an Ingress resource.
 
