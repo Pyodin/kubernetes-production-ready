@@ -1,0 +1,17 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: azdevops-agent-scaledobject
+  namespace: az-devops
+spec:
+  scaleTargetRef:
+    name: az-devops-linux
+  minReplicaCount: 1
+  maxReplicaCount: 5
+  triggers:
+    - type: azure-pipelines
+      metadata:
+        poolId: <your-pool-id>
+        organizationURLFromEnv: "AZP_URL"
+      authenticationRef:
+        name: azdevops-trigger-auth

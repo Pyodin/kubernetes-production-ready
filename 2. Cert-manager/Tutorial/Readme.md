@@ -249,7 +249,7 @@ Unlike Ingress resources, HTTPProxy resources do not support annotations. To use
     namespace: kuard
     spec:
         virtualhost:
-            fqdn: infra.almacg.com
+            fqdn: <domain>
             tls:
                 secretName: kuard-tls-with-lets-encrypt
         routes:
